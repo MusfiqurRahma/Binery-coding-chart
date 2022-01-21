@@ -15,8 +15,9 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import logo from '../../image/binery-logo-small 1.png';
-import { Grid } from '@mui/material';
-
+import { Grid} from '@mui/material';
+import Paper from '@mui/material/Paper';
+import  increaseImg  from '../../image/images.png'
 
 import {
   LineChart,
@@ -25,69 +26,66 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
-  Brush,
-  AreaChart,
-  Area,
   ResponsiveContainer,
 } from 'recharts';
 
 const data = [
   {
-    name: 'Page A',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
+    name: 22,
+    uv: 3,
+    pv: 0,
+    amt: '24k',
   },
   {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
+    name: 23,
+    uv: 15,
+    pv: 0,
+    amt: '29k',
   },
   {
-    name: 'Page C',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
+    name: 24,
+    uv: 7,
+    pv: 0,
+    amt: '26k',
   },
   {
-    name: 'Page D',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
+    name: 25,
+    uv: 9,
+    pv: 0,
+    amt: '22k',
   },
   {
-    name: 'Page E',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
+    name: 26,
+    uv: 6,
+    pv: 0,
+    amt: '24k',
   },
   {
-    name: 'Page F',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
+    name: 27,
+    uv: 14,
+    pv: 0,
+    amt: '21k',
   },
   {
-    name: 'Page G',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
+    name: 28,
+    uv: 10,
+    pv: 0,
+    amt: '27k',
   },
 ];
 
+
 const drawerWidth = 100;
 
-interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window?: () => Window;
-}
+// interface Props {
+//   /**
+//    * Injected by the documentation to work in an iframe.
+//    * You won't need it on your project.
+//    */
+//   window?: () => Window;
+// }
 
-export default function Home(props: Props) {
+export default function Home(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -95,6 +93,22 @@ export default function Home(props: Props) {
     setMobileOpen(!mobileOpen);
   };
 
+//   let [num, setNum]= React.useState(10);
+//   let incNum =()=>{
+//     if(num<10)
+//     {
+//     setNum(Number(num)+1);
+//     }
+//   };
+//   let decNum = () => {
+//      if(num>0)
+//      {
+//       setNum(num - 1);
+//      }
+//   }
+//  let handleChange = (e)=>{
+//    setNum(e.target.value);
+//   }
   const drawer = (
     <div>
           <Toolbar />
@@ -184,7 +198,34 @@ export default function Home(props: Props) {
               renderInput={(params) =><TextField {...params} label="Last 7 Days" />}
           />
           <Grid container spacing={2} style={{marginLeft:'140px',marginTop:'20px'}}>
-            <Grid item xs={12} md={4}>     
+        <Grid item xs={12} md={4}>
+          <Paper elevation={3} sx={{ padding: '15px' }}>
+            <Box sx={{ display:'flex',justifyContent: 'space-between' }}>
+              <Typography variant='h6' sx={{
+                color: '#010937',
+                fontSize: '16px',
+                fontWeight: '700'
+              }}>MRR/AR</Typography>
+               {/* <div class="">
+               <div class="">
+                <button class="btn btn-outline-primary" type="button" onClick={decNum}>-</button>
+                 </div>
+                <input type="" value={num} onChange={handleChange} style={{width:'8px',border:'0px'}}/>
+                <div class="">
+               <button class="btn btn-outline-primary" type="button" onClick={incNum}>+</button>
+              </div>
+              </div> */}
+              
+              <Typography variant='p'
+                style={{
+                  color: '#008274',
+                  fontWeight: '500',
+                  fontSize: '13px',
+                  lineHeight: '16px'
+                }}><img
+                  style={{ width: '8px' }}
+                  src={increaseImg} alt="" />10%</Typography>
+            </Box>
           <ResponsiveContainer width="100%" height={200}>
           <LineChart
             width={500}
@@ -194,17 +235,17 @@ export default function Home(props: Props) {
             margin={{
               top: 10,
               right: 30,
-              left: 0,
+              left: -30,
               bottom: 0,
             }}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
+            <XAxis dataKey="name" tick={{fill:"gray"}}/>
             <YAxis />
-            <Tooltip />
-            <Line type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
-          </LineChart>
-        </ResponsiveContainer>
+            <Tooltip contentStyle={{ backgroundColor: "#fff", color: "gray" }} itemStyle={{ color: "gray" }}/>
+            <Line dataKey="uv" stroke="#008274" fill="#8884d8" strokeWidth="2" />
+            </LineChart>
+        </ResponsiveContainer> </Paper>
           </Grid>
           <Grid item xs={12} md={4}>
           <h2>Hello</h2>
