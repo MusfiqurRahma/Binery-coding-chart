@@ -3,12 +3,6 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -17,11 +11,10 @@ import Autocomplete from '@mui/material/Autocomplete';
 import logo from '../../image/binery-logo-small 1.png';
 import { Grid} from '@mui/material';
 import Paper from '@mui/material/Paper';
-import increaseImg from '../../image/images.png';
-import increaseImg3 from '../../image/images (1).png';
-import increaseImg4 from '../../image/pyramid-design-template-2-color-blue-orange-vector-73870689-removebg-preview.png';
-import HouseSidingIcon from '@mui/icons-material/HouseSiding';
-
+import increaseImg from '../../image/upper.png';
+import increaseImg3 from '../../image/white upper.png';
+import increaseImg4 from '../../image/lower.png';
+import home from '../../image/home.png'
 import {
   LineChart,
   Line,
@@ -34,6 +27,13 @@ import {
 import { BarChart, Bar } from 'recharts';
 import { Table } from 'react-bootstrap';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
+import circle from '../../image/Vector.png';
+import message2 from '../../image/message2.png';
+import inbox from '../../image/inbox2.png';
+import moneybag from '../../image/box.png';
+import headphone from '../../image/Headphone.png';
+import alarm from '../../image/Alarm.png';
+import man from '../../image/man.png';
 
 
 
@@ -117,30 +117,68 @@ export default function Home(props) {
 //    setNum(e.target.value);
 //   }
   const drawer = (
-    <div>
+   <> <div>
           <Toolbar />
-          <img src={logo} alt="" style={{marginTop:'-80px',width:'45px'}}/>
-      <List>
-        {['', '', '', ''].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <List>
-        {['', '', ''].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      <img src={logo} alt=""
+        style={{
+          marginTop: '-80px',
+          width: '45px'
+        }} />
     </div>
+      <div><img
+        style={{
+          marginTop: '60px',
+          backgroundColor: '#fde9dd',
+          padding: '10px',
+          borderRadius: '10px'
+        }} src={circle} alt="" /></div>
+      <div><img
+        style={{
+          marginTop: '25px',
+          border:'1px solid rgba(99, 99, 99, 0.1)',
+          padding: '10px',
+          borderRadius: '10px',
+          color:'gray'
+        }} src={inbox} alt="" /></div>
+      <div><img
+        style={{
+          marginTop: '25px',
+          border:'1px solid rgba(99, 99, 99, 0.1)',
+          padding: '10px',
+          borderRadius: '10px',
+          color:'gray'
+        }} src={message2 } alt="" /></div>
+      <div><img
+        style={{
+          marginTop: '25px',
+          border:'1px solid rgba(99, 99, 99, 0.1)',
+          padding: '10px',
+          borderRadius: '10px',
+          color:'gray'
+        }} src={moneybag} alt="" /></div>
+      <div><img
+        style={{
+          marginTop: '25px',
+          border:'1px solid rgba(99, 99, 99, 0.1)',
+          padding: '10px',
+          borderRadius: '10px',
+          color:'gray'
+        }} src={headphone} alt="" /></div>
+      <div><img
+        style={{
+          marginTop: '25px',
+          border:'1px solid rgba(99, 99, 99, 0.1)',
+          padding: '10px',
+          borderRadius: '10px',
+          color:'gray'
+        }} src={alarm} alt="" /></div> 
+      <div><img
+        style={{
+          marginTop: '25px',
+          borderRadius: '50px',
+          color:'gray'
+        }} src={man} alt="" /></div>
+    </>
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
@@ -174,8 +212,9 @@ export default function Home(props) {
             edge="start"
             onClick={handleDrawerToggle}
                   sx={{
-                      mr: 2, color: 'red',
-                      display: { sm: 'none' }
+                    mr: 2,
+                    color: 'red',
+                    display: { sm: 'none' }
                   }}
           >
             <MenuIcon />
@@ -194,7 +233,7 @@ export default function Home(props) {
                       marginRight:'180px'
                   }} variant='h5'>Hello,Liam! </Typography>
         <Typography sx={{
-          color: '#656983'
+            color: '#656983'
           , marginRight: '140px'
         }} variant='p'>Finance Mission Control</Typography>
           </div> 
@@ -203,16 +242,24 @@ export default function Home(props) {
       id="combo-box-demo"
       options={top100Films}
               sx={{
-                  width: 300,
-                  ml: 25, marginLeft: '75%',
-                  marginTop: '-60px'
+                width: 300,
+                ml: 25,
+                marginLeft: '75%',
+                marginTop: '-60px'
               }}
               renderInput={(params) =><TextField {...params} label="Last 7 Days" />}
           />
-          <Grid container spacing={2} style={{marginLeft:'110px',marginTop:'20px'}}>
+      <Grid container spacing={2}
+        style={{
+          marginLeft: '110px',
+          marginTop: '20px'
+        }}>
         <Grid item xs={12} md={3}>
           <Paper elevation={3}
-            sx={{ padding: '15px',borderRadius:'10px' }}>
+            sx={{
+              padding: '15px',
+              borderRadius: '10px'
+            }}>
             <Box sx={{
               display: 'flex',
               justifyContent: 'space-between'
@@ -239,7 +286,7 @@ export default function Home(props) {
                   fontSize: '13px',
                   lineHeight: '16px'
                 }}><img
-                  style={{ width: '8px' }}
+                  style={{ width: '13px' }}
                   src={increaseImg} alt="" />10%</Typography>
             </Box>
           <ResponsiveContainer width="100%" height={200}>
@@ -255,11 +302,22 @@ export default function Home(props) {
               bottom: 0,
             }}
           >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" tick={{fill:"gray"}}/>
+                <CartesianGrid
+                  strokeDasharray="3 3" />
+                <XAxis dataKey="name"
+                  tick={{ fill: "gray" }} />
             <YAxis />
-            <Tooltip contentStyle={{ backgroundColor: "#fff",color: "gray" }} itemStyle={{ color: "gray" }}/>
-            <Line dataKey="balance" stroke="#008274" fill="#8884d8" strokeWidth="2" />
+                <Tooltip
+                  contentStyle={{
+                  backgroundColor: "#fff",
+                  color: "gray"
+                  }}
+                  itemStyle={{ color: "gray" }} />
+                <Line
+                  dataKey="balance"
+                  stroke="#008274"
+                  fill="#8884d8"
+                  strokeWidth="2" />
             </LineChart>
             </ResponsiveContainer> </Paper>
           
@@ -312,14 +370,23 @@ export default function Home(props) {
               bottom: 0,
             }}
           >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" tick={{fill:"gray"}}/>
+                <CartesianGrid
+                  strokeDasharray="3 3" />
+                <XAxis
+                  dataKey="name"
+                  tick={{ fill: "gray" }} />
             <YAxis />
-                <Tooltip contentStyle={{
+                <Tooltip
+                  contentStyle={{
                   backgroundColor: "#fff",
                   color: "gray"
-                }} itemStyle={{ color: "gray" }} />
-            <Line dataKey="balanceee" stroke="#ef6b1f" fill="#ef6b1f" strokeWidth="2" />
+                  }}
+                  itemStyle={{ color: "gray" }} />
+                <Line
+                  dataKey="balanceee"
+                  stroke="#ef6b1f"
+                  fill="#ef6b1f"
+                  strokeWidth="2" />
             </LineChart>
             </ResponsiveContainer> </Paper>
           </Grid>
@@ -344,7 +411,12 @@ export default function Home(props) {
             textAlign: 'left',
             color: 'white'
             }}>$201,142</p>
-              <HouseSidingIcon style={{color:'white'}}/>
+              <img
+                style={{
+                  width: '20px',
+                  height: '20px',
+                  marginRight: '10px'
+                }} src={home} alt="" />
            </div>
            <Typography variant='p'
                 style={{
@@ -353,19 +425,36 @@ export default function Home(props) {
                   fontSize: '16px',
                   lineHeight: '16px'
                 }}><img
-                  style={{ width: '12px' }}
+                style={{
+                  width: '12px',
+                  marginRight: '2px'
+                }}
               src={increaseImg3} alt="" />10%</Typography>
-          <Typography variant='p' style={{color:'#a0a4b9'}}>Since Last Month</Typography>
+            <Typography
+              variant='p'
+              style={{ color: '#a0a4b9' }}> Since Last Month</Typography>
           </div>
-          <ResponsiveContainer width="90%" height="50%">      
-            <BarChart  data={data}>
-            <XAxis dataKey='pv' tick={{fill:"#F2F4FC"}}/>
-          <Bar dataKey="pv" fill="#2fc083" />
+          <ResponsiveContainer
+            width="90%"
+            height="50%">      
+            <BarChart
+              data={data}>
+              <XAxis
+                dataKey='pv'
+                tick={{ fill: "#F2F4FC" }} />
+              <Bar
+                dataKey="pv"
+                fill="#2fc083" />
             </BarChart>
           </ResponsiveContainer>
-          <div className='d-flex justify-content-between'>
-            <p style={{ color: 'white' }}>Credit Card Balances</p>
-            <CreditCardIcon style={{color:'white'}}/>
+          <div
+            className='d-flex justify-content-between'>
+            <p
+              style={{ color: 'white' }}>Credit Card Balances</p>
+            <CreditCardIcon style={{
+              color: 'white',
+              marginRight: '5px'
+            }} />
           </div>
           <p style={{
             fontSize: '24px',
@@ -380,9 +469,14 @@ export default function Home(props) {
                   fontSize: '16px',
                   lineHeight: '16px'
                 }}><img
-                  style={{ width: '12px' }}
+              style={{
+                width: '12px',
+                marginRight: '5px'
+              }}
               src={increaseImg3} alt="" />2%</Typography>
-          <Typography variant='p' style={{color:'#a0a4b9'}}>Since Last Month</Typography>
+          <Typography
+            variant='p'
+            style={{ color: '#a0a4b9' }}> Since Last Month</Typography>
 
           {/* <ResponsiveContainer width="50%" height="80%">      
             <BarChart width={50} height={20} dataa={dataa}>
@@ -392,16 +486,26 @@ export default function Home(props) {
           </ResponsiveContainer> */}
           </Grid>
           <Grid item xs={12} md={3}>
-          <Paper elevation={3} style={{padding:'8px',borderRadius:'10px'}}>
-          <div className='d-flex justify-content-between'>
-                  <p style={{fontWeight:'500',fontSize:'14px'}}>Expenses</p>
+          <Paper elevation={3}
+            style={{
+              padding: '8px',
+              borderRadius: '10px',
+              marginLeft: '10px'
+            }}>
+            <div
+              className='d-flex justify-content-between'>
+              <p
+                style={{
+                  fontWeight: '500',
+                  fontSize: '14px'
+                }}>Expenses</p>
               <Autocomplete
                options={top100Filmss}
               sx={{
                   width: 200,
                   ml: 25,
                 }}
-                style={{marginLeft:'135px'}}
+                style={{marginLeft:'120px'}}
               renderInput={(params) =><TextField {...params} label="This Week" /> }
           />
               </div>
@@ -492,8 +596,14 @@ export default function Home(props) {
         <Drawer
           variant="permanent"
           sx={{
-            display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            display: {
+              xs: 'none',
+              sm: 'block'
+            },
+            '& .MuiDrawer-paper': {
+              boxSizing: 'border-box',
+              width: drawerWidth
+            },
           }}
           open
         >
@@ -502,7 +612,11 @@ export default function Home(props) {
       </Box>
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+        sx={{
+          flexGrow: 1,
+          p: 3,
+          width: { sm: `calc(100% - ${drawerWidth}px)` }
+        }}
       >
         <Toolbar />
       </Box>
